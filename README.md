@@ -29,3 +29,11 @@ celery_fallback_consumer.register(app)
 | CELERY_FALLBACK_CONSUMER | N/A | True | Enables fallback consumer if it has been registered |
 | CELERY_FALLBACK_TERMINATE | fallback_terminate | True | Controls terminating unacked task |
 | CELERY_FALLBACK_TERMINATE_SIGNAL | fallback_terminate_signal | `SIGTERM` | Specifies signal to send to terminate |
+
+# Author
+
+[Antonov Mikhail](https://github.com/atin65536)
+
+# License
+
+BSD - 3
