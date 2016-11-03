@@ -4,12 +4,13 @@
 
 # Problem
 
-Using `RabbitMQ` as broker and `CELERY_ACKS_LATE` option
-results multiple task execution in case of connection to broker is lost or broken.
-This module provides workaround by terminating active unacked tasks.
-You can specify which kind of tasks you would like to terminate, look at the **settings** section below.
+Using `RabbitMQ` as broker and `CELERY_ACKS_LATE` option enabled
+results multiple task execution in case of broker connection lost or broken.
+This module provides workaround terminating active unacked tasks in case of connection problems.
+You can specify which kind of tasks you would like to terminate (see **settings** section below).
 
 # Installation & Setup
+
 ```#bash
 pip install celery-fallback-consumer
 pip install git+https://github.com/MnogoByte/celery-fallback-consumer.git
@@ -26,9 +27,9 @@ celery_fallback_consumer.register(app)
 
 | Setting | Task attribute | Default | Description |
 | ------- | -------------- | ------- | ----------- |
-| CELERY_FALLBACK_CONSUMER | N/A | True | Enables fallback consumer if it has been registered |
+| CELERY_FALLBACK_CONSUMER | N/A | True | Enables fallback consumer if it is registered |
 | CELERY_FALLBACK_TERMINATE | fallback_terminate | True | Controls terminating unacked task |
-| CELERY_FALLBACK_TERMINATE_SIGNAL | fallback_terminate_signal | `SIGTERM` | Specifies signal to send to terminate |
+| CELERY_FALLBACK_TERMINATE_SIGNAL | fallback_terminate_signal | `SIGTERM` | Specifies signal sent for termination |
 
 # Author
 
